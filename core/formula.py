@@ -1,10 +1,8 @@
 """Geometry: the mathematics behind every neuron in this track, in flashcard order.
 
-This is the file to learn from. Each neuron has a section; its formulas are
-written the way they read, with no input checks, rounding cleanup or
-formatting. Sections stay empty until that neuron is built. The pages'
-scaffolding lives in each topic folder and imports from here, and each page's
-"View the code" popup shows the functions it uses from this file.
+Sections stay empty until that neuron is built. The pages' scaffolding lives
+in each topic folder and imports from here, and each page's "View the code"
+popup shows the functions it uses from this file.
 """
 
 # _____________ G.1 Angle Relationships _____________
