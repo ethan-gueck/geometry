@@ -1,0 +1,20 @@
+/* triangle_angles.css: page-specific styles for the triangle angle sum (formula typesetting as on the algebra pages). */
+.formula { margin: 0; display: inline-flex; align-items: center; gap: 0.3em; font-family: var(--font-serif); font-size: var(--fs-md); }
+.formula__note { font-family: var(--font-sans); font-size: var(--fs-sm); opacity: 0.75; }
+.formulas { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-2); }
+
+.steps-panel { margin-top: var(--space-4); }
+.steps__note { margin: var(--space-3) 0 0; font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--text-soft); }
+
+.terms { grid-template-columns: minmax(0, 1fr); gap: 0; }
+.terms dt { color: var(--text); font-weight: 600; padding-top: var(--space-2); }
+.terms dd { margin: 0; font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--text-soft); }
+.param-terms { margin: var(--space-2) 0; }
+.glossary { margin-top: var(--space-3); }
+.glossary summary { cursor: pointer; font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--primary-soft); }
+.glossary .terms { display: grid; margin: 0; }
+
+/* Yes / no for each test in the results. */
+.verdict-yes { color: var(--primary); font-weight: 600; }
+.verdict-no { color: var(--text-soft); }
+.sum-note { margin: var(--space-2) 0 0; font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--text-soft); }

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-theme="{{theme_name}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  {{head}}
+  <style>
+{{styles}}
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__bar">
+        <span class="masthead__kicker">Geometry · G.3</span>
+        <a href="https://ethan-gueck.github.io/">ethan-gueck.github.io</a>
+      </div>
+      <div class="masthead__title">
+        <div>
+          <h1 class="masthead__name">{{title}}</h1>
+          <p class="masthead__subtitle">The squares on the two legs of a right triangle add up to the square on its hypotenuse.</p>
+        </div>
+        <div class="masthead__aside formulas" aria-label="a squared plus b squared equals c squared; c equals the square root of a squared plus b squared; c squared less than a squared plus b squared: acute; c squared greater than a squared plus b squared: obtuse">
+          <p class="formula"><span class="var">a</span>² + <span class="var">b</span>² = <span class="var">c</span>² &nbsp;·&nbsp; <span class="var">c</span> = √<span class="radicand"><span class="var">a</span>² + <span class="var">b</span>²</span></p>
+          <p class="formula"><span class="var">c</span>² &lt; <span class="var">a</span>² + <span class="var">b</span>² <span class="formula__note">acute</span> &nbsp;·&nbsp; <span class="var">c</span>² &gt; <span class="var">a</span>² + <span class="var">b</span>² <span class="formula__note">obtuse</span></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-body">
+    <div class="widget">
+      <section class="widget__main" aria-label="Animation">
+        <div class="stage">
+          <canvas id="scene"></canvas>
+          {{stage_settings}}
+          <button id="run" class="stage__run" type="button">▶ Run animation</button>
+        </div>
+        <div class="narration" id="narration" aria-live="polite">Press run to animate.</div>
+        <div class="transport">
+          <button id="play" class="btn btn--primary btn--pill" type="button">▶ Play</button>
+          <button id="finish" class="btn btn--pill" type="button">Show final</button>
+          <input id="scrub" type="range" min="0" max="1000" value="1000" aria-label="Timeline position">
+          <label class="inline">Speed
+            <select id="speed" class="select">
+              <option value="0.5">0.5×</option>
+              <option value="1" selected>1×</option>
+              <option value="2">2×</option>
+            </select>
+          </label>
+        </div>
+
+        <section class="panel steps-panel" aria-labelledby="steps-title">
+          <div class="panel__head">
+            <h2 class="panel__title" id="steps-title">Step by step</h2>
+            {{code_button}}
+          </div>
+          <ol class="steps steps--compact" id="steps"></ol>
+          <p class="steps__note">Common Pythagorean triples: 3–4–5, 5–12–13, 8–15–17, 7–24–25 (and their multiples, such as 6–8–10).</p>
+        </section>
+      </section>
+
+      <aside class="widget__side">
+        <fieldset class="panel">
+          <legend>The sides</legend>
+          <label class="mode-pick">
+            <span class="visually-hidden">What to do</span>
+            <select id="mode" class="select">
+              <option value="legs">Right triangle from its legs</option>
+              <option value="sides">Test any three sides</option>
+            </select>
+          </label>
+          <p class="mode-about" id="mode-about"></p>
+          <div class="field">
+            <label for="a-num"><span class="var">a</span></label>
+            <input id="a-range" type="range" min="0.5" max="30" step="0.5" aria-label="side a slider">
+            <input id="a-num" type="number" step="any">
+          </div>
+          <div class="field">
+            <label for="b-num"><span class="var">b</span></label>
+            <input id="b-range" type="range" min="0.5" max="30" step="0.5" aria-label="side b slider">
+            <input id="b-num" type="number" step="any">
+          </div>
+          <div class="field" id="c-field" hidden>
+            <label for="c-num"><span class="var">c</span></label>
+            <input id="c-range" type="range" min="0.5" max="40" step="0.5" aria-label="side c slider">
+            <input id="c-num" type="number" step="any">
+          </div>
+          <p id="error" class="error" role="alert" hidden></p>
+          <div class="chips">
+            <p class="chips__label">Right triangles (Pythagorean triples)</p>
+            <button class="btn" type="button" data-preset="3,4">3–4–5</button>
+            <button class="btn" type="button" data-preset="5,12">5–12–13</button>
+            <button class="btn" type="button" data-preset="8,15">8–15–17</button>
+            <button class="btn" type="button" data-preset="7,24">7–24–25</button>
+            <p class="chips__label">Any three sides</p>
+            <button class="btn" type="button" data-preset="5,6,7">Acute: 5, 6, 7</button>
+            <button class="btn" type="button" data-preset="4,5,8">Obtuse: 4, 5, 8</button>
+            <button class="btn" type="button" data-preset="6,8,10">Right: 6, 8, 10</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="panel">
+          <legend>Results</legend>
+          <dl class="results" id="results"></dl>
+          <details class="glossary">
+            <summary>What these terms mean</summary>
+            <dl class="terms" id="glossary"></dl>
+          </details>
+        </fieldset>
+      </aside>
+    </div>
+  </main>
+
+  <script id="pp-config" type="application/json">{{config}}</script>
+  <script>
+{{scripts}}
+  </script>
+</body>
+</html>

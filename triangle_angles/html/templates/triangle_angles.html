@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" data-theme="{{theme_name}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  {{head}}
+  <style>
+{{styles}}
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__bar">
+        <span class="masthead__kicker">Geometry · G.2</span>
+        <a href="https://ethan-gueck.github.io/">ethan-gueck.github.io</a>
+      </div>
+      <div class="masthead__title">
+        <div>
+          <h1 class="masthead__name">{{title}}</h1>
+          <p class="masthead__subtitle">The three angles of any triangle fill a straight line: A + B + C = 180°.</p>
+        </div>
+        <div class="masthead__aside formulas" aria-label="A plus B plus C equals 180 degrees">
+          <p class="formula"><span class="var">A</span> + <span class="var">B</span> + <span class="var">C</span> = 180°</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-body">
+    <div class="widget">
+      <section class="widget__main" aria-label="Animation">
+        <div class="stage">
+          <canvas id="scene"></canvas>
+          {{stage_settings}}
+          <button id="run" class="stage__run" type="button">▶ Run animation</button>
+        </div>
+        <div class="narration" id="narration" aria-live="polite">Press run to animate.</div>
+        <div class="transport">
+          <button id="play" class="btn btn--primary btn--pill" type="button">▶ Play</button>
+          <button id="finish" class="btn btn--pill" type="button">Show final</button>
+          <input id="scrub" type="range" min="0" max="1000" value="1000" aria-label="Timeline position">
+          <label class="inline">Speed
+            <select id="speed" class="select">
+              <option value="0.5">0.5×</option>
+              <option value="1" selected>1×</option>
+              <option value="2">2×</option>
+            </select>
+          </label>
+        </div>
+
+        <section class="panel steps-panel" aria-labelledby="steps-title">
+          <div class="panel__head">
+            <h2 class="panel__title" id="steps-title">Step by step</h2>
+            {{code_button}}
+          </div>
+          <ol class="steps steps--compact" id="steps"></ol>
+          <p class="steps__note">The card's exterior-angle and triangle-inequality parts join this page once they are written in <code>core/formula.py</code>.</p>
+        </section>
+      </section>
+
+      <aside class="widget__side">
+        <fieldset class="panel">
+          <legend>Three angles</legend>
+          <div class="field">
+            <label for="a-num"><span class="var">A</span></label>
+            <input id="a-range" type="range" min="1" max="178" step="1" aria-label="angle A slider">
+            <input id="a-num" type="number" step="any">
+          </div>
+          <div class="field">
+            <label for="b-num"><span class="var">B</span></label>
+            <input id="b-range" type="range" min="1" max="178" step="1" aria-label="angle B slider">
+            <input id="b-num" type="number" step="any">
+          </div>
+          <div class="field">
+            <label for="c-num"><span class="var">C</span></label>
+            <input id="c-range" type="range" min="1" max="178" step="1" aria-label="angle C slider">
+            <input id="c-num" type="number" step="any">
+          </div>
+          <dl class="results terms param-terms">
+            <dt><span class="var">A</span>, <span class="var">B</span>, <span class="var">C</span></dt><dd>the angles at the three corners, in degrees; side AB lies along the bottom</dd>
+          </dl>
+          <p id="error" class="error" role="alert" hidden></p>
+          <div class="chips">
+            <button class="btn" type="button" data-preset="60,60,60">60° · 60° · 60°</button>
+            <button class="btn" type="button" data-preset="90,45,45">90° · 45° · 45°</button>
+            <button class="btn" type="button" data-preset="30,60,90">30° · 60° · 90°</button>
+            <button class="btn" type="button" data-preset="100,40,40">100° · 40° · 40°</button>
+            <button class="btn" type="button" data-preset="70,60,80">70° · 60° · 80° (210°)</button>
+            <button class="btn" type="button" data-preset="50,40,60">50° · 40° · 60° (150°)</button>
+          </div>
+          <p class="sum-note"><button class="btn" type="button" id="complete">Set C = 180° − A − B</button></p>
+        </fieldset>
+
+        <fieldset class="panel">
+          <legend>Results</legend>
+          <dl class="results" id="results"></dl>
+          <details class="glossary">
+            <summary>What these terms mean</summary>
+            <dl class="terms" id="glossary"></dl>
+          </details>
+        </fieldset>
+      </aside>
+    </div>
+  </main>
+
+  <script id="pp-config" type="application/json">{{config}}</script>
+  <script>
+{{scripts}}
+  </script>
+</body>
+</html>
