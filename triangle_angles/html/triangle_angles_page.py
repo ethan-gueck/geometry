@@ -22,7 +22,7 @@ FORMULA = HTML_DIR.parent.parent / "core" / "formula.py"  # the Geometry track's
 MATH_SCRIPTS = (FMT_SCRIPT, STATIC / "triangle_angles_math.js")
 BUNDLE = WIDGET.extend(css=[STATIC / "triangle_angles.css"], js=[*MATH_SCRIPTS, FIGURE_SCRIPT, STATIC / "triangle_angles.js"])
 # The "View the code" popup shows only the concept: the G.2 section of core/formula.py.
-MATH = ("module", "triangle_angle_sum")
+MATH = ("triangle_angle_sum",)
 # The animation's toggles, in the gear menu in the corner of the stage.
 SHOW = (("labels", "Labels"), ("proof", "Parallel-line proof"), ("grid", "Grid", False))
 CODE = (CodeFile(FORMULA, "The triangle angle sum in Python: the three angles of a triangle add up to 180°.", only=MATH),)

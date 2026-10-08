@@ -22,7 +22,7 @@ FORMULA = HTML_DIR.parent.parent / "core" / "formula.py"  # the Geometry track's
 MATH_SCRIPTS = (FMT_SCRIPT, STATIC / "pythagorean_math.js")
 BUNDLE = WIDGET.extend(css=[STATIC / "pythagorean.css"], js=[*MATH_SCRIPTS, FIGURE_SCRIPT, STATIC / "pythagorean.js"])
 # The "View the code" popup shows only the concept: the G.3 section of core/formula.py.
-MATH = ("module", "pythagorean_theorem", "is_acute_triangle", "is_obtuse_triangle")
+MATH = ("pythagorean_theorem", "is_acute_triangle", "is_obtuse_triangle")
 # The animation's toggles, in the gear menu in the corner of the stage.
 SHOW = (("labels", "Labels"), ("squares", "Squares on the sides"), ("units", "Unit squares"), ("grid", "Grid", False))
 CODE = (CodeFile(FORMULA, "The Pythagorean theorem in Python, and c² against a² + b² to tell acute from obtuse.", only=MATH),)

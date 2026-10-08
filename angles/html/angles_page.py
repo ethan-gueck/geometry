@@ -22,7 +22,7 @@ FORMULA = HTML_DIR.parent.parent / "core" / "formula.py"  # the Geometry track's
 MATH_SCRIPTS = (FMT_SCRIPT, STATIC / "angles_math.js")
 BUNDLE = WIDGET.extend(css=[STATIC / "angles.css"], js=[*MATH_SCRIPTS, FIGURE_SCRIPT, STATIC / "angles.js"])
 # The "View the code" popup shows only the concept: the G.1 section of core/formula.py.
-MATH = ("module", "is_complementary_angle", "is_supplementary_angle")
+MATH = ("is_complementary_angle", "is_supplementary_angle")
 # The animation's toggles, in the gear menu in the corner of the stage.
 SHOW = (("labels", "Labels"), ("arcs", "Angle arcs"), ("guides", "90° and 180° guides"), ("grid", "Grid", False))
 CODE = (CodeFile(FORMULA, "Angle relationships in Python: complementary angles add to 90°, supplementary angles to 180°.", only=MATH),)
