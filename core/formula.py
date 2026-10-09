@@ -1,5 +1,7 @@
 """Geometry: the mathematics behind every neuron in this track, in flashcard order."""
 
+import math
+
 # _____________ G.1 Angle Relationships _____________
 
 def is_complementary_angle(a, b):
@@ -41,6 +43,37 @@ def is_obtuse_triangle(a, b, c):
 # _____________ G.8 Area of Plane Figures _____________
 
 # _____________ G.9 Circles: Circumference, Area, Arcs & Sectors _____________
+
+def circumference_of_a_circle(r):
+    """C = 2πr: the circumference C is the distance around a circle of radius r.
+
+    r is the radius (the distance from the center to any point on the circle) and π ≈ 3.14159
+    is the ratio of any circle's circumference to its diameter d = 2r, so C = πd as well.
+    """
+    return 2 * math.pi * r
+
+def area_of_a_circle(r):
+    """A = πr²: the area A enclosed by a circle of radius r.
+
+    r is the radius and π ≈ 3.14159; doubling the radius multiplies the area by four.
+    """
+    return math.pi * r ** 2
+
+def arc_length(r, theta):
+    """s = rθ: the arc length s cut off by a central angle θ in a circle of radius r.
+
+    θ (theta) is the central angle in radians: the arc is the fraction θ / 2π of the
+    circumference 2πr. For an angle in degrees, convert first with math.radians(degrees).
+    """
+    return r * theta
+
+def sector_of_a_circle(r, theta):
+    """A_sector = ½r²θ: the area of the pie-shaped sector between two radii and the arc between them.
+
+    r is the radius and θ (theta) the central angle in radians: the sector is the fraction
+    θ / 2π of the circle's area πr². For an angle in degrees, convert first with math.radians(degrees).
+    """
+    return (1 / 2) * r ** 2 * theta
 
 # _____________ G.10 Circle Theorems _____________
 

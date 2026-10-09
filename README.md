@@ -19,6 +19,7 @@ The bar is the cumulative size of every file in the published site, where 100% i
 | [`angles/`](angles/) | [Angle Relationships](https://ethan-gueck.github.io/geometry/angles/angles.html) | G.1 |
 | [`triangle_angles/`](triangle_angles/) | [Triangle Angle Sum](https://ethan-gueck.github.io/geometry/triangle_angles/triangle_angles.html) | G.2 |
 | [`pythagorean/`](pythagorean/) | [Pythagorean Theorem](https://ethan-gueck.github.io/geometry/pythagorean/pythagorean.html) | G.3 |
+| [`circles/`](circles/) | [Circles: Circumference, Area, Arcs & Sectors](https://ethan-gueck.github.io/geometry/circles/circles.html) | G.9 |
 
 The other neurons in this track show their flashcard with **Coming soon**.
 

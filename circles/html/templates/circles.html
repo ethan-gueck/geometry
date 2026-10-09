@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" data-theme="{{theme_name}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  {{head}}
+  <style>
+{{styles}}
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__bar">
+        <span class="masthead__kicker">Geometry · G.9</span>
+        <a href="https://ethan-gueck.github.io/">ethan-gueck.github.io</a>
+      </div>
+      <div class="masthead__title">
+        <div>
+          <h1 class="masthead__name">{{title}}</h1>
+          <p class="masthead__subtitle">Trace a circle, fill it, then cut a slice: the arc and the sector take the same share of the circle as the angle.</p>
+        </div>
+        <div class="masthead__aside formulas" aria-label="C equals 2 pi r; A equals pi r squared; s equals r theta; A sector equals one half r squared theta">
+          <p class="formula"><span class="var">C</span> = 2π<span class="var">r</span> &nbsp;·&nbsp; <span class="var">A</span> = π<span class="var">r</span>²</p>
+          <p class="formula"><span class="var">s</span> = <span class="var">r</span>θ &nbsp;·&nbsp; <span class="var">A</span><sub>sector</sub> = ½<span class="var">r</span>²θ <span class="formula__note">θ in radians</span></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-body">
+    <div class="widget">
+      <section class="widget__main" aria-label="Animation">
+        <div class="stage">
+          <canvas id="scene"></canvas>
+          {{stage_settings}}
+          <button id="run" class="stage__run" type="button">▶ Run animation</button>
+        </div>
+        <div class="narration" id="narration" aria-live="polite">Press run to animate.</div>
+        <div class="transport">
+          <button id="play" class="btn btn--primary btn--pill" type="button">▶ Play</button>
+          <button id="finish" class="btn btn--pill" type="button">Show final</button>
+          <input id="scrub" type="range" min="0" max="1000" value="1000" aria-label="Timeline position">
+          <label class="inline">Speed
+            <select id="speed" class="select">
+              <option value="0.5">0.5×</option>
+              <option value="1" selected>1×</option>
+              <option value="2">2×</option>
+            </select>
+          </label>
+        </div>
+
+        <section class="panel steps-panel" aria-labelledby="steps-title">
+          <div class="panel__head">
+            <h2 class="panel__title" id="steps-title">Step by step</h2>
+            {{code_button}}
+          </div>
+          <ol class="steps steps--compact" id="steps"></ol>
+        </section>
+      </section>
+
+      <aside class="widget__side">
+        <fieldset class="panel">
+          <legend>The circle</legend>
+          <div class="field">
+            <label for="r-num"><span class="var">r</span></label>
+            <input id="r-range" type="range" min="0.5" max="20" step="0.5" aria-label="radius slider">
+            <input id="r-num" type="number" step="any" min="0">
+          </div>
+          <div class="field">
+            <label for="degrees-num">θ°</label>
+            <input id="degrees-range" type="range" min="0" max="360" step="1" aria-label="central angle slider, in degrees">
+            <input id="degrees-num" type="number" step="any" min="0" max="360">
+          </div>
+          <p class="mode-about">Set the central angle in degrees; the arc and sector formulas use it in radians, θ° × π / 180.</p>
+          <p id="error" class="error" role="alert" hidden></p>
+          <div class="chips">
+            <button class="btn" type="button" data-preset="3,60">A 60° slice</button>
+            <button class="btn" type="button" data-preset="1,90">Unit circle, 90°</button>
+            <button class="btn" type="button" data-preset="4,57.29577951">One radian: s = r</button>
+            <button class="btn" type="button" data-preset="6,45">Pizza slice</button>
+            <button class="btn" type="button" data-preset="2.5,180">Half circle</button>
+            <button class="btn" type="button" data-preset="2,360">Full turn</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="panel">
+          <legend>Results</legend>
+          <dl class="results" id="results"></dl>
+          <details class="glossary">
+            <summary>What these terms mean</summary>
+            <dl class="terms" id="glossary"></dl>
+          </details>
+        </fieldset>
+      </aside>
+    </div>
+  </main>
+
+  <script id="pp-config" type="application/json">{{config}}</script>
+  <script>
+{{scripts}}
+  </script>
+</body>
+</html>
