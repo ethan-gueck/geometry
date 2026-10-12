@@ -2,7 +2,7 @@
 
 import math
 
-# _____________ G.1 Angle Relationships _____________
+# _____________ G.3 Angle Relationships _____________
 
 def is_complementary_angle(a, b):
     """Two angles are complementary if they add up to 90°."""
@@ -12,13 +12,13 @@ def is_supplementary_angle(a, b):
     """Two angles are supplementary if they add up to 180°."""
     return a + b == 180
 
-# _____________ G.2 Triangle Angle Sum & Triangle Inequality _____________
+# _____________ G.5 Triangle Angle Sum & Triangle Inequality _____________
 
 def triangle_angle_sum(a, b, c):
     """The sum of the interior angles of a triangle is 180°."""
     return a + b + c == 180
 
-# _____________ G.3 Pythagorean Theorem _____________
+# _____________ G.7 Pythagorean Theorem _____________
 
 def pythagorean_theorem(a, b):
     """In a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides."""
@@ -32,17 +32,17 @@ def is_obtuse_triangle(a, b, c):
     """c² > a² + b²: obtuse, with c the longest side."""
     return c**2 > a**2 + b**2
 
-# _____________ G.4 Special Right Triangles _____________
+# _____________ G.8 Special Right Triangles _____________
 
-# _____________ G.5 Similar Triangles & Scale Factor _____________
+# _____________ G.9 Similar Triangles & Scale Factor _____________
 
-# _____________ G.6 Distance & Midpoint Formulas _____________
+# _____________ G.12 Distance & Midpoint Formulas _____________
 
-# _____________ G.7 Polygon Angle Sums & Diagonals _____________
+# _____________ G.13 Polygon Angle Sums & Diagonals _____________
 
-# _____________ G.8 Area of Plane Figures _____________
+# _____________ G.15 Area of Plane Figures _____________
 
-# _____________ G.9 Circles: Circumference, Area, Arcs & Sectors _____________
+# _____________ G.17 Circles: Circumference, Area, Arcs & Sectors _____________
 
 def circumference_of_a_circle(r):
     """C = 2πr: the circumference C is the distance around a circle of radius r.
@@ -75,10 +75,10 @@ def sector_of_a_circle(r, theta):
     """
     return (1 / 2) * r ** 2 * theta
 
-# _____________ G.10 Circle Theorems _____________
+# _____________ G.18 Circle Theorems _____________
 
-# _____________ G.11 Prisms & Cylinders _____________
+# _____________ G.21 Prisms & Cylinders _____________
 
-# _____________ G.12 Pyramids, Cones & Spheres _____________
+# _____________ G.22 Pyramids, Cones & Spheres _____________
 
-# _____________ G.13 Coordinate Transformations _____________
+# _____________ G.24 Coordinate Transformations _____________

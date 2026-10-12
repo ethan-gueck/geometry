@@ -19,7 +19,7 @@ def _build_page(output_path, theme=None):
 TOPIC = Topic(
     title="Angle Relationships",
     description="Two adjacent angles α and β: complementary when α + β = 90° (a corner), supplementary when α + β = 180° (a straight line).",
-    cards=("G.1",),  # flashcard: Angle Relationships
+    cards=("G.3",),  # flashcard: Angle Relationships
     modules=(
         JSModule(
             name="angles",

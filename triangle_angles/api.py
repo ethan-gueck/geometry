@@ -19,7 +19,7 @@ def _build_page(output_path, theme=None):
 TOPIC = Topic(
     title="Triangle Angle Sum",
     description="The three angles of a triangle add up to 180°: A + B + C = 180°, shown with a line through one corner parallel to the opposite side.",
-    cards=("G.2",),  # flashcard: Triangle Angle Sum & Triangle Inequality
+    cards=("G.5",),  # flashcard: Triangle Angle Sum & Triangle Inequality
     modules=(
         JSModule(
             name="triangle_angles",

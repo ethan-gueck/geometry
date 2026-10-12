@@ -1,5 +1,5 @@
 /*
- * circles_math.js — browser mirror of circles/solver.py and the G.9 section of core/formula.py.
+ * circles_math.js — browser mirror of circles/solver.py and the G.17 section of core/formula.py.
  *
  * Loaded after shared/static/fmt.js (window.GeoFmt). Python stays the source of truth:
  * tests/test_js_parity.py runs this file and compares solve() with the Python output.
@@ -9,7 +9,7 @@
   "use strict";
   const { clean, fmt } = global.GeoFmt;
 
-  // ---- core/formula.py: G.9 Circles ------------------------------------------------
+  // ---- core/formula.py: G.17 Circles ------------------------------------------------
   const circumferenceOfACircle = (r) => 2 * Math.PI * r;       // C = 2πr
   const areaOfACircle = (r) => Math.PI * r ** 2;               // A = πr²
   const arcLength = (r, theta) => r * theta;                   // s = rθ, θ in radians

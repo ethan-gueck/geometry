@@ -19,7 +19,7 @@ def _build_page(output_path, theme=None):
 TOPIC = Topic(
     title="Circles: Circumference, Area, Arcs & Sectors",
     description="C = 2πr and A = πr², and for a central angle θ in radians the arc s = rθ and the sector ½r²θ: the same share θ / 2π of the circle.",
-    cards=("G.9",),  # flashcard: Circles: Circumference, Area, Arcs & Sectors
+    cards=("G.17",),  # flashcard: Circles: Circumference, Area, Arcs & Sectors
     modules=(
         JSModule(
             name="circles",

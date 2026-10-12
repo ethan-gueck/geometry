@@ -21,7 +21,7 @@ def _build_page(output_path, theme=None):
 TOPIC = Topic(
     title="Pythagorean Theorem",
     description="a² + b² = c²: the squares on a right triangle's legs add up to the square on its hypotenuse, and c² against a² + b² tells acute from obtuse.",
-    cards=("G.3",),  # flashcard: Pythagorean Theorem
+    cards=("G.7",),  # flashcard: Pythagorean Theorem
     modules=(
         JSModule(
             name="pythagorean",

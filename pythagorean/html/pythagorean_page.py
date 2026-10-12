@@ -21,7 +21,7 @@ FORMULA = HTML_DIR.parent.parent / "core" / "formula.py"  # the Geometry track's
 # fmt comes from the shared browser module, so it loads first.
 MATH_SCRIPTS = (FMT_SCRIPT, STATIC / "pythagorean_math.js")
 BUNDLE = WIDGET.extend(css=[STATIC / "pythagorean.css"], js=[*MATH_SCRIPTS, FIGURE_SCRIPT, STATIC / "pythagorean.js"])
-# The "View the code" popup shows only the concept: the G.3 section of core/formula.py.
+# The "View the code" popup shows only the concept: the G.7 section of core/formula.py.
 MATH = ("pythagorean_theorem", "is_acute_triangle", "is_obtuse_triangle")
 # The animation's toggles, in the gear menu in the corner of the stage.
 SHOW = (("labels", "Labels"), ("squares", "Squares on the sides"), ("units", "Unit squares"), ("grid", "Grid", False))

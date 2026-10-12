@@ -1,5 +1,5 @@
 /*
- * triangle_angles_math.js — browser mirror of triangle_angles/solver.py and the G.2 section of core/formula.py.
+ * triangle_angles_math.js — browser mirror of triangle_angles/solver.py and the G.5 section of core/formula.py.
  *
  * Loaded after shared/static/fmt.js (window.GeoFmt). Python stays the source of
  * truth: tests/test_js_parity.py runs this file and compares solve() with the
@@ -9,7 +9,7 @@
   "use strict";
   const { clean, fmt, deg } = global.GeoFmt;
 
-  // ---- core/formula.py: G.2 Triangle Angle Sum ------------------------------------
+  // ---- core/formula.py: G.5 Triangle Angle Sum ------------------------------------
   const triangleAngleSum = (a, b, c) => a + b + c === 180;
 
   // ---- triangle_angles/solver.py ------------------------------------------------------

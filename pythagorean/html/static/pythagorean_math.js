@@ -1,5 +1,5 @@
 /*
- * pythagorean_math.js — browser mirror of pythagorean/solver.py and the G.3 section of core/formula.py.
+ * pythagorean_math.js — browser mirror of pythagorean/solver.py and the G.7 section of core/formula.py.
  *
  * Loaded after shared/static/fmt.js (window.GeoFmt). Python stays the source of
  * truth: tests/test_js_parity.py runs this file and compares solve() and
@@ -10,7 +10,7 @@
   "use strict";
   const { clean, fmt } = global.GeoFmt;
 
-  // ---- core/formula.py: G.3 Pythagorean Theorem ---------------------------------
+  // ---- core/formula.py: G.7 Pythagorean Theorem ---------------------------------
   const pythagoreanTheorem = (a, b) => (a ** 2 + b ** 2) ** 0.5;
   const isAcuteTriangle = (a, b, c) => c ** 2 < a ** 2 + b ** 2;
   const isObtuseTriangle = (a, b, c) => c ** 2 > a ** 2 + b ** 2;
@@ -23,7 +23,7 @@
     none: "no triangle: sides a and b cannot meet across c",
   };
 
-  /** The sides with the longest as c, as the G.3 formulas expect. */
+  /** The sides with the longest as c, as the G.7 formulas expect. */
   function longestLast(a, b, c) {
     if (c >= a && c >= b) return [a, b, c];
     return a >= b ? [c, b, a] : [a, c, b];

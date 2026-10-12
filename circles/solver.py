@@ -1,6 +1,6 @@
 """A circle of radius r and a central angle θ: circumference, area, arc length and sector area.
 
-core/formula.py holds the mathematics as written: G.9 circumference_of_a_circle (C = 2πr),
+core/formula.py holds the mathematics as written: G.17 circumference_of_a_circle (C = 2πr),
 area_of_a_circle (A = πr²), arc_length (s = rθ) and sector_of_a_circle (A_sector = ½r²θ), the
 last two with θ in radians. This module calls those and adds what the page needs around them:
 the angle taken in degrees and converted to radians, the diameter, the share of the circle the

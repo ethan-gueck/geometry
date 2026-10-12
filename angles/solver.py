@@ -1,6 +1,6 @@
 """Two adjacent angles α and β: their total, and whether they are complementary or supplementary, step by step.
 
-The mathematics lives in core/formula.py (section G.1 Angle Relationships):
+The mathematics lives in core/formula.py (section G.3 Angle Relationships):
 is_complementary_angle (α + β = 90°) and is_supplementary_angle
 (α + β = 180°). This module calls those and adds what the page needs around
 them: angles as text, the total α + β to draw, what β would have to be to
@@ -43,7 +43,7 @@ def verdict(complementary: bool, supplementary: bool, total: float) -> str:
 
 
 def steps(a: float, b: float, total: float, complementary: bool, supplementary: bool) -> list[dict]:
-    """Each relationship on the G.1 card, with these angles in it."""
+    """Each relationship on the G.3 card, with these angles in it."""
 
     def test(holds: bool, target: int, name: str) -> str:
         if holds:
@@ -77,7 +77,7 @@ class AngleSolution:
 
 
 def solve(a: float, b: float) -> AngleSolution:
-    """Adjacent angles α = a and β = b: their total and the two G.1 tests, with the steps."""
+    """Adjacent angles α = a and β = b: their total and the two G.3 tests, with the steps."""
     complementary = formula.is_complementary_angle(a, b)
     supplementary = formula.is_supplementary_angle(a, b)
     total = clean(a + b)  # page plumbing: the outer angle to draw and print

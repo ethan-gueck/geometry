@@ -1,6 +1,6 @@
 """Three angles A, B and C: do they add up to 180°, and so make a triangle? Step by step.
 
-The mathematics lives in core/formula.py (section G.2 Triangle Angle Sum &
+The mathematics lives in core/formula.py (section G.5 Triangle Angle Sum &
 Triangle Inequality): triangle_angle_sum, A + B + C = 180°. This module calls
 it and adds what the page needs around it: angles as text, the total and how
 far it misses 180°, where to draw the triangle's corners, and the check
@@ -24,7 +24,7 @@ BASE = 6  # length of the drawn side AB, in figure units
 def vertices(a: float, b: float, c: float) -> dict | None:
     """Corners to draw the triangle with angles A, B, C: AB along the x-axis, C above it.
 
-    Page plumbing for the drawing, not part of the G.2 card: the law of sines
+    Page plumbing for the drawing, not part of the G.5 card: the law of sines
     gives side AC = AB · sin B / sin C, and C sits that far from A at angle A.
     None when an angle is not positive, since then there is no triangle to draw.
     """
@@ -45,7 +45,7 @@ def verdict(is_triangle: bool, total: float, miss: float, positive: bool) -> str
 
 
 def steps(a: float, b: float, c: float, total: float, miss: float, is_triangle: bool) -> list[dict]:
-    """The angle sum on the G.2 card, with these angles in it."""
+    """The angle sum on the G.5 card, with these angles in it."""
     angles = f"{deg(a)} + {deg(b)} + {deg(c)}"
     off = f"{deg(abs(miss))} {'short of' if miss > 0 else 'over'} 180°"
     if is_triangle:
@@ -86,7 +86,7 @@ class TriangleAngleSolution:
 
 
 def solve(a: float, b: float, c: float) -> TriangleAngleSolution:
-    """Angles A = a, B = b, C = c: the G.2 angle-sum check, the triangle to draw and the steps."""
+    """Angles A = a, B = b, C = c: the G.5 angle-sum check, the triangle to draw and the steps."""
     is_triangle = formula.triangle_angle_sum(a, b, c)
     total = clean(a + b + c)  # page plumbing: the total to print and lay out
     miss = clean(180 - total)  # how far short of (+) or over (−) a straight angle

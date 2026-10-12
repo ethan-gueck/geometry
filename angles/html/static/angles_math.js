@@ -1,5 +1,5 @@
 /*
- * angles_math.js — browser mirror of angles/solver.py and the G.1 section of core/formula.py.
+ * angles_math.js — browser mirror of angles/solver.py and the G.3 section of core/formula.py.
  *
  * Loaded after shared/static/fmt.js (window.GeoFmt). Python stays the source of
  * truth: tests/test_js_parity.py runs this file and compares solve() with the
@@ -9,7 +9,7 @@
   "use strict";
   const { clean, fmt, deg } = global.GeoFmt;
 
-  // ---- core/formula.py: G.1 Angle Relationships -----------------------------------
+  // ---- core/formula.py: G.3 Angle Relationships -----------------------------------
   const isComplementaryAngle = (a, b) => a + b === 90;
   const isSupplementaryAngle = (a, b) => a + b === 180;
 

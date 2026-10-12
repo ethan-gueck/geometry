@@ -21,7 +21,7 @@ FORMULA = HTML_DIR.parent.parent / "core" / "formula.py"  # the Geometry track's
 # fmt comes from the shared browser module, so it loads first.
 MATH_SCRIPTS = (FMT_SCRIPT, STATIC / "circles_math.js")
 BUNDLE = WIDGET.extend(css=[STATIC / "circles.css"], js=[*MATH_SCRIPTS, FIGURE_SCRIPT, STATIC / "circles.js"])
-# The "View the code" popup shows only the concept: the G.9 section of core/formula.py.
+# The "View the code" popup shows only the concept: the G.17 section of core/formula.py.
 MATH = ("circumference_of_a_circle", "area_of_a_circle", "arc_length", "sector_of_a_circle")
 # The animation's toggles, in the gear menu in the corner of the stage.
 SHOW = (("labels", "Labels"), ("disc", "Shade the area"), ("grid", "Grid", False))

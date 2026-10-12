@@ -18,8 +18,8 @@ def test_page_inlines_its_scripts_and_has_the_code_popup():
     for name in ("pythagorean-theorem", "is-acute-triangle", "is-obtuse-triangle"):
         assert f'id="pp-code-0-{name}"' in dialog
     for other in ("is-complementary-angle", "triangle-angle-sum"):
-        assert f'id="pp-code-0-{other}"' not in dialog  # only the G.3 section
-    assert "corner_cosine" not in dialog and "G.13 Coordinate Transformations" not in dialog
+        assert f'id="pp-code-0-{other}"' not in dialog  # only the G.7 section
+    assert "corner_cosine" not in dialog and "G.24 Coordinate Transformations" not in dialog
 
 
 def test_config_carries_solution_and_roles():

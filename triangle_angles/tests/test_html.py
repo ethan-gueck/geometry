@@ -17,8 +17,8 @@ def test_page_inlines_its_scripts_and_has_the_code_popup():
     dialog = document.split('<dialog class="code-modal"')[1].split("</dialog>")[0]
     assert 'id="pp-code-0-triangle-angle-sum"' in dialog
     for other in ("is-complementary-angle", "is-supplementary-angle", "pythagorean-theorem", "is-obtuse-triangle"):
-        assert f'id="pp-code-0-{other}"' not in dialog  # only the G.2 section
-    assert "vertices" not in dialog and "G.13 Coordinate Transformations" not in dialog
+        assert f'id="pp-code-0-{other}"' not in dialog  # only the G.5 section
+    assert "vertices" not in dialog and "G.24 Coordinate Transformations" not in dialog
 
 
 def test_config_carries_solution_and_roles():

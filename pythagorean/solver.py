@@ -1,6 +1,6 @@
 """The Pythagorean theorem: the hypotenuse from two legs, and any three sides classified as acute, right or obtuse.
 
-The mathematics lives in core/formula.py (section G.3 Pythagorean Theorem):
+The mathematics lives in core/formula.py (section G.7 Pythagorean Theorem):
 pythagorean_theorem, c = √(a² + b²), and is_acute_triangle / is_obtuse_triangle,
 which compare c² with a² + b² for c the longest side. This module calls those
 and adds what the page needs around them: the squares as numbers, the sides
@@ -25,14 +25,14 @@ KINDS = {
 
 
 def longest_last(a: float, b: float, c: float) -> tuple[float, float, float]:
-    """The sides with the longest as c, as the G.3 formulas expect; a and b keep their order otherwise."""
+    """The sides with the longest as c, as the G.7 formulas expect; a and b keep their order otherwise."""
     if c >= a and c >= b:
         return a, b, c
     return (c, b, a) if a >= b else (a, c, b)
 
 
 def corner_cosine(a: float, b: float, c: float) -> float:
-    """cos of the angle between sides a and b (opposite c). Page plumbing for the drawing, not part of the G.3 card.
+    """cos of the angle between sides a and b (opposite c). Page plumbing for the drawing, not part of the G.7 card.
 
     By the law of cosines it is (a² + b² − c²) / 2ab: 0 for a right angle, and
     outside −1 … 1 when the three lengths cannot close into a triangle.
