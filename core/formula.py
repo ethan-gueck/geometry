@@ -2,6 +2,10 @@
 
 import math
 
+# _____________ G.1 Points, Lines, Rays, Segments & Planes _____________
+
+# _____________ G.2 Angles: Measure & Types _____________
+
 # _____________ G.3 Angle Relationships _____________
 
 def is_complementary_angle(a, b):
@@ -12,11 +16,15 @@ def is_supplementary_angle(a, b):
     """Two angles are supplementary if they add up to 180°."""
     return a + b == 180
 
+# _____________ G.4 Classifying Triangles _____________
+
 # _____________ G.5 Triangle Angle Sum & Triangle Inequality _____________
 
 def triangle_angle_sum(a, b, c):
     """The sum of the interior angles of a triangle is 180°."""
     return a + b + c == 180
+
+# _____________ G.6 Triangle Congruence _____________
 
 # _____________ G.7 Pythagorean Theorem _____________
 
@@ -36,11 +44,19 @@ def is_obtuse_triangle(a, b, c):
 
 # _____________ G.9 Similar Triangles & Scale Factor _____________
 
+# _____________ G.10 Similarity Criteria & Proportional Segments _____________
+
+# _____________ G.11 Triangle Centers _____________
+
 # _____________ G.12 Distance & Midpoint Formulas _____________
 
 # _____________ G.13 Polygon Angle Sums & Diagonals _____________
 
+# _____________ G.14 Quadrilateral Properties _____________
+
 # _____________ G.15 Area of Plane Figures _____________
+
+# _____________ G.16 Triangle Area: Heron’s Formula & Alternatives _____________
 
 # _____________ G.17 Circles: Circumference, Area, Arcs & Sectors _____________
 
@@ -77,8 +93,16 @@ def sector_of_a_circle(r, theta):
 
 # _____________ G.18 Circle Theorems _____________
 
+# _____________ G.19 Equation of a Circle _____________
+
+# _____________ G.20 Coordinate Geometry Proofs _____________
+
 # _____________ G.21 Prisms & Cylinders _____________
 
 # _____________ G.22 Pyramids, Cones & Spheres _____________
 
+# _____________ G.23 Surface Area of Solids _____________
+
 # _____________ G.24 Coordinate Transformations _____________
+
+# _____________ G.25 Rotations, Rigid Motions & Compositions _____________
