@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-theme="{{theme_name}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  {{head}}
+  <style>
+{{styles}}
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__bar">
+        <span class="masthead__kicker">Geometry · G.2</span>
+        <a href="https://ethan-gueck.github.io/">ethan-gueck.github.io</a>
+      </div>
+      <div class="masthead__title">
+        <div>
+          <h1 class="masthead__name">{{title}}</h1>
+          <p class="masthead__subtitle">How far one ray turns from another, and the name each size of turn goes by.</p>
+        </div>
+        <div class="masthead__aside formulas" aria-label="180 degrees equals pi radians; the measure of angle A B C equals angle A B D plus angle D B C">
+          <p class="formula">180° = π rad</p>
+          <p class="formula"><span class="var">m</span>∠<span class="var">ABC</span> = <span class="var">m</span>∠<span class="var">ABD</span> + <span class="var">m</span>∠<span class="var">DBC</span></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-body">
+    <div class="widget">
+      <section class="widget__main" aria-label="Animation">
+        <div class="stage">
+          <canvas id="scene"></canvas>
+          {{stage_settings}}
+          <button id="run" class="stage__run" type="button">▶ Run animation</button>
+        </div>
+        <div class="narration" id="narration" aria-live="polite">Press run to animate.</div>
+        <div class="transport">
+          <button id="play" class="btn btn--primary btn--pill" type="button">▶ Play</button>
+          <button id="finish" class="btn btn--pill" type="button">Show final</button>
+          <input id="scrub" type="range" min="0" max="1000" value="1000" aria-label="Timeline position">
+          <label class="inline">Speed
+            <select id="speed" class="select">
+              <option value="0.5">0.5×</option>
+              <option value="1" selected>1×</option>
+              <option value="2">2×</option>
+            </select>
+          </label>
+        </div>
+
+        <section class="panel steps-panel" aria-labelledby="steps-title">
+          <div class="panel__head">
+            <h2 class="panel__title" id="steps-title">Step by step</h2>
+            {{code_button}}
+          </div>
+          <ol class="steps steps--compact" id="steps"></ol>
+          <p class="steps__note">A way to remember: <em>a-cute</em> angles are small; obtuse angles are wide; a straight angle is a straight line.</p>
+        </section>
+      </section>
+
+      <aside class="widget__side">
+        <fieldset class="panel">
+          <legend>The angle</legend>
+          <div class="field">
+            <label for="theta-num"><span class="var">θ</span></label>
+            <input id="theta-range" type="range" min="0" max="360" step="1" aria-label="theta slider">
+            <input id="theta-num" type="number" step="any">
+          </div>
+          <div class="field">
+            <label for="d-num"><span class="var">φ</span></label>
+            <input id="d-range" type="range" min="0" max="360" step="1" aria-label="phi slider (angle ABD)">
+            <input id="d-num" type="number" step="any">
+          </div>
+          <dl class="results terms param-terms">
+            <dt><span class="var">θ</span> = <span class="var">m</span>∠<span class="var">ABC</span></dt><dd>the turn from ray BA to ray BC, about the vertex B, in degrees</dd>
+            <dt><span class="var">φ</span> = <span class="var">m</span>∠<span class="var">ABD</span></dt><dd>where ray BD sits inside the angle: the part of θ from BA to BD</dd>
+          </dl>
+          <p id="error" class="error" role="alert" hidden></p>
+          <div class="chips">
+            <button class="btn" type="button" data-preset="40,20">Acute</button>
+            <button class="btn" type="button" data-preset="90,45">Right</button>
+            <button class="btn" type="button" data-preset="130,50">Obtuse</button>
+            <button class="btn" type="button" data-preset="180,60">Straight</button>
+            <button class="btn" type="button" data-preset="250,125">Reflex</button>
+            <button class="btn" type="button" data-preset="360,90">Full turn</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="panel">
+          <legend>Results</legend>
+          <dl class="results" id="results"></dl>
+          <details class="glossary">
+            <summary>What these terms mean</summary>
+            <dl class="terms" id="glossary"></dl>
+          </details>
+        </fieldset>
+      </aside>
+    </div>
+  </main>
+
+  <script id="pp-config" type="application/json">{{config}}</script>
+  <script>
+{{scripts}}
+  </script>
+</body>
+</html>

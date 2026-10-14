@@ -6,6 +6,47 @@ import math
 
 # _____________ G.2 Angles: Measure & Types _____________
 
+def is_acute_angle(theta):
+    """0° < θ < 90°: an acute angle is smaller than a right angle."""
+    return 0 < theta < 90
+
+def is_right_angle(theta):
+    """θ = 90°: a right angle, marked with a small square; its sides are perpendicular."""
+    return theta == 90
+
+def is_obtuse_angle(theta):
+    """90° < θ < 180°: an obtuse angle is larger than a right angle and smaller than a straight one."""
+    return 90 < theta < 180
+
+def is_straight_angle(theta):
+    """θ = 180°: a straight angle; its two sides are opposite rays, so the angle is a line."""
+    return theta == 180
+
+def is_reflex_angle(theta):
+    """180° < θ < 360°: a reflex angle is larger than a straight angle."""
+    return 180 < theta < 360
+
+def is_full_turn(theta):
+    """θ = 360°: one full revolution, 2π radians."""
+    return theta == 360
+
+def degrees_to_radians(theta):
+    """θ rad = θ° × π / 180°: a full turn is 360° = 2π rad, a straight angle 180° = π rad."""
+    return theta * math.pi / 180
+
+def reflex_angle(theta):
+    """360° − θ: the angle on the outside, going the other way round the vertex."""
+    return 360 - theta
+
+def angle_addition(abd, dbc):
+    """m∠ABC = m∠ABD + m∠DBC: if D is inside ∠ABC, the two parts add up to the whole."""
+    return abd + dbc
+
+def angle_bisector(abc):
+    """m∠ABD = m∠DBC = ½ m∠ABC: the bisector BD splits the angle into two equal halves."""
+    return abc / 2
+
+
 # _____________ G.3 Angle Relationships _____________
 
 def is_complementary_angle(a, b):
