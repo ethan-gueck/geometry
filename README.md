@@ -16,6 +16,7 @@ The bar is the cumulative size of every file in the published site, where 100% i
 
 | Folder | Page | Flashcards |
 | --- | --- | --- |
+| [`points_lines/`](points_lines/) | [Points, Lines, Rays, Segments & Planes](https://ethan-gueck.github.io/geometry/points_lines/points_lines.html) | G.1 |
 | [`angle_types/`](angle_types/) | [Angles: Measure & Types](https://ethan-gueck.github.io/geometry/angle_types/angle_types.html) | G.2 |
 | [`angles/`](angles/) | [Angle Relationships](https://ethan-gueck.github.io/geometry/angles/angles.html) | G.3 |
 | [`triangle_angles/`](triangle_angles/) | [Triangle Angle Sum](https://ethan-gueck.github.io/geometry/triangle_angles/triangle_angles.html) | G.5 |

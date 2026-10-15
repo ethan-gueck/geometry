@@ -4,6 +4,45 @@ import math
 
 # _____________ G.1 Points, Lines, Rays, Segments & Planes _____________
 
+def segment_length(x1, y1, x2, y2):
+    """AB = √((x₂ − x₁)² + (y₂ − y₁)²): the length of segment AB, written without the bar."""
+    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
+def segment_addition(ab, bc):
+    """AB + BC = AC: when B lies on segment AC, the two pieces add up to the whole."""
+    return ab + bc
+
+def are_collinear(ax, ay, bx, by, cx, cy):
+    """m_AB = m_BC: three points lie on one line when the slopes agree (or all x are equal).
+
+    Written cross-multiplied, (y_B − y_A)(x_C − x_B) = (y_C − y_B)(x_B − x_A), so a vertical line needs no division.
+    """
+    return math.isclose((by - ay) * (cx - bx), (cy - by) * (bx - ax), abs_tol=1e-9)
+
+def is_between(ax, ay, bx, by, cx, cy):
+    """B is between A and C exactly when AB + BC = AC: any detour off the segment makes the sum longer."""
+    ab = segment_length(ax, ay, bx, by)
+    bc = segment_length(bx, by, cx, cy)
+    ac = segment_length(ax, ay, cx, cy)
+    return math.isclose(segment_addition(ab, bc), ac, abs_tol=1e-9)
+
+def determine_one_plane(ax, ay, bx, by, cx, cy):
+    """Three noncollinear points determine exactly one plane; three points on one line lie in many."""
+    return not are_collinear(ax, ay, bx, by, cx, cy)
+
+def line_intersection(ax, ay, bx, by, cx, cy, dx, dy):
+    """Lines AB and CD meet in one point, never (parallel), or everywhere (the same line).
+
+    Returns ("point", (x, y)), ("parallel", None) or ("same", None).
+    """
+    denominator = (bx - ax) * (dy - cy) - (by - ay) * (dx - cx)
+    if math.isclose(denominator, 0, abs_tol=1e-9):
+        if are_collinear(ax, ay, bx, by, cx, cy):
+            return "same", None
+        return "parallel", None
+    t = ((cx - ax) * (dy - cy) - (cy - ay) * (dx - cx)) / denominator
+    return "point", (ax + t * (bx - ax), ay + t * (by - ay))
+
 # _____________ G.2 Angles: Measure & Types _____________
 
 def is_acute_angle(theta):

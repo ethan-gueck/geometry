@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" data-theme="{{theme_name}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  {{head}}
+  <style>
+{{styles}}
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__bar">
+        <span class="masthead__kicker">Geometry · G.1</span>
+        <a href="https://ethan-gueck.github.io/">ethan-gueck.github.io</a>
+      </div>
+      <div class="masthead__title">
+        <div>
+          <h1 class="masthead__name">{{title}}</h1>
+          <p class="masthead__subtitle">The building blocks: where a segment stops, where a ray starts, and when points share a line.</p>
+        </div>
+        <div class="masthead__aside formulas" aria-label="A B plus B C equals A C when B lies between A and C; slope A B equals slope B C when A, B and C are collinear">
+          <p class="formula"><span class="var">AB</span> + <span class="var">BC</span> = <span class="var">AC</span></p>
+          <p class="formula">slope <span class="var">AB</span> = slope <span class="var">BC</span></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-body">
+    <div class="widget">
+      <section class="widget__main" aria-label="Animation">
+        <div class="stage">
+          <canvas id="scene"></canvas>
+          {{stage_settings}}
+          <button id="run" class="stage__run" type="button">▶ Run animation</button>
+        </div>
+        <div class="narration" id="narration" aria-live="polite">Press run to animate.</div>
+        <div class="transport">
+          <button id="play" class="btn btn--primary btn--pill" type="button">▶ Play</button>
+          <button id="finish" class="btn btn--pill" type="button">Show final</button>
+          <input id="scrub" type="range" min="0" max="1000" value="1000" aria-label="Timeline position">
+          <label class="inline">Speed
+            <select id="speed" class="select">
+              <option value="0.5">0.5×</option>
+              <option value="1" selected>1×</option>
+              <option value="2">2×</option>
+            </select>
+          </label>
+        </div>
+
+        <section class="panel steps-panel" aria-labelledby="steps-title">
+          <div class="panel__head">
+            <h2 class="panel__title" id="steps-title">Step by step</h2>
+            {{code_button}}
+          </div>
+          <ol class="steps steps--compact" id="steps"></ol>
+          <p class="steps__note">A way to remember: a bar stops at both ends (segment); one arrow goes one way (ray); two arrows go both ways (line).</p>
+        </section>
+      </section>
+
+      <aside class="widget__side">
+        <fieldset class="panel">
+          <legend>Four points</legend>
+          <div class="coord" data-point="a">
+            <span class="coord__name">A</span>
+            <label><span class="var">x</span><input id="ax-num" type="number" step="any" aria-label="A x"></label>
+            <label><span class="var">y</span><input id="ay-num" type="number" step="any" aria-label="A y"></label>
+          </div>
+          <div class="coord" data-point="b">
+            <span class="coord__name">B</span>
+            <label><span class="var">x</span><input id="bx-num" type="number" step="any" aria-label="B x"></label>
+            <label><span class="var">y</span><input id="by-num" type="number" step="any" aria-label="B y"></label>
+          </div>
+          <div class="coord" data-point="c">
+            <span class="coord__name">C</span>
+            <label><span class="var">x</span><input id="cx-num" type="number" step="any" aria-label="C x"></label>
+            <label><span class="var">y</span><input id="cy-num" type="number" step="any" aria-label="C y"></label>
+          </div>
+          <div class="coord" data-point="d">
+            <span class="coord__name">D</span>
+            <label><span class="var">x</span><input id="dx-num" type="number" step="any" aria-label="D x"></label>
+            <label><span class="var">y</span><input id="dy-num" type="number" step="any" aria-label="D y"></label>
+          </div>
+          <dl class="results terms param-terms">
+            <dt>A, B, C</dt><dd>tested for segment addition (is B between A and C?) and collinearity</dd>
+            <dt>Line CD</dt><dd>a second line, to see where it meets line AB</dd>
+          </dl>
+          <p id="error" class="error" role="alert" hidden></p>
+          <div class="chips">
+            <button class="btn" type="button" data-preset="-3,-1,1,1,5,3,-2,4">B between</button>
+            <button class="btn" type="button" data-preset="-3,-1,3,2,1,1,-2,4">B outside</button>
+            <button class="btn" type="button" data-preset="-3,-2,0,3,4,0,-3,3">Not collinear</button>
+            <button class="btn" type="button" data-preset="-3,-1,3,2,-2,2,2,4">Parallel</button>
+            <button class="btn" type="button" data-preset="-4,-2,0,0,2,1,4,2">Same line</button>
+            <button class="btn" type="button" data-preset="1,-3,1,0,1,4,-3,0">Vertical</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="panel">
+          <legend>Results</legend>
+          <dl class="results" id="results"></dl>
+          <details class="glossary">
+            <summary>What these terms mean</summary>
+            <dl class="terms" id="glossary"></dl>
+          </details>
+        </fieldset>
+      </aside>
+    </div>
+  </main>
+
+  <script id="pp-config" type="application/json">{{config}}</script>
+  <script>
+{{scripts}}
+  </script>
+</body>
+</html>

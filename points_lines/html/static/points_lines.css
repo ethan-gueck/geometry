@@ -1,0 +1,25 @@
+/* points_lines.css: page-specific styles for points, lines, rays, segments and planes (formula typesetting as on the algebra pages). */
+.formula { margin: 0; display: inline-flex; align-items: center; gap: 0.3em; font-family: var(--font-serif); font-size: var(--fs-md); }
+.formula__note { font-family: var(--font-sans); font-size: var(--fs-sm); opacity: 0.75; }
+.formulas { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-2); }
+
+.steps-panel { margin-top: var(--space-4); }
+.steps__note { margin: var(--space-3) 0 0; font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--text-soft); }
+
+.terms { grid-template-columns: minmax(0, 1fr); gap: 0; }
+.terms dt { color: var(--text); font-weight: 600; padding-top: var(--space-2); }
+.terms dd { margin: 0; font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--text-soft); }
+.param-terms { margin: var(--space-2) 0; }
+.glossary { margin-top: var(--space-3); }
+.glossary summary { cursor: pointer; font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--primary-soft); }
+.glossary .terms { display: grid; margin: 0; }
+
+/* Yes / no for each test in the results. */
+.verdict-yes { color: var(--primary); font-weight: 600; }
+.verdict-no { color: var(--text-soft); }
+
+/* One row per point: its letter, then x and y. */
+.coord { display: grid; grid-template-columns: 1.6em minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: var(--space-2); margin-bottom: var(--space-2); }
+.coord__name { font-family: var(--font-serif); font-weight: 600; font-size: var(--fs-md); color: var(--text); }
+.coord label { display: flex; align-items: center; gap: 0.35em; font-family: var(--font-serif); color: var(--text-soft); }
+.coord input { width: 100%; min-width: 0; }
