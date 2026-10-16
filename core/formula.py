@@ -122,6 +122,25 @@ def is_obtuse_triangle(a, b, c):
 
 # _____________ G.8 Special Right Triangles _____________
 
+def special_right_triangle_30_60_90(short_leg):
+    """In a 30°-60°-90° triangle, the hypotenuse is twice the short leg and the long leg is √3 times the short leg."""
+    hypotenuse = 2 * short_leg
+    long_leg = short_leg * math.sqrt(3)
+    return hypotenuse, long_leg
+
+def special_right_triangle_45_45_90(leg):
+    """In a 45°-45°-90° triangle, the hypotenuse is √2 times the leg."""
+    hypotenuse = leg * math.sqrt(2)
+    return hypotenuse
+
+def height_of_equilateral_triangle(side):
+    """h = (√3 / 2) * s: the height of an equilateral triangle with side length s."""
+    return (math.sqrt(3) / 2) * side
+
+def diagonal_of_square(side):
+    """d = s√2: the diagonal of a square with side length s."""
+    return side * math.sqrt(2)
+
 # _____________ G.9 Similar Triangles & Scale Factor _____________
 
 # _____________ G.10 Similarity Criteria & Proportional Segments _____________
