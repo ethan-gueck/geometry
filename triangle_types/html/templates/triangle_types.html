@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" data-theme="{{theme_name}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  {{head}}
+  <style>
+{{styles}}
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__bar">
+        <span class="masthead__kicker">Geometry · G.4</span>
+        <a href="https://ethan-gueck.github.io/">ethan-gueck.github.io</a>
+      </div>
+      <div class="masthead__title">
+        <div>
+          <h1 class="masthead__name">{{title}}</h1>
+          <p class="masthead__subtitle">A triangle is typed by how many of its sides are equal, and by its largest angle against 90°.</p>
+        </div>
+        <div class="masthead__aside formulas" aria-label="Equilateral: a equals b equals c, A equals B equals C equals 60 degrees. Isosceles: a equals b if and only if A equals B. Largest angle under, at or over 90 degrees: acute, right, obtuse. a greater than b if and only if A greater than B. Equilateral area equals root 3 over 4 times s squared">
+          <p class="formula"><span class="var">a</span> = <span class="var">b</span> = <span class="var">c</span>, <span class="var">A</span> = <span class="var">B</span> = <span class="var">C</span> = 60° <span class="formula__note">equilateral</span> &nbsp;·&nbsp; <span class="var">a</span> = <span class="var">b</span> ⟺ <span class="var">A</span> = <span class="var">B</span> <span class="formula__note">isosceles</span></p>
+          <p class="formula">max(<span class="var">A</span>, <span class="var">B</span>, <span class="var">C</span>) &lt; 90°, = 90°, &gt; 90° <span class="formula__note">acute, right, obtuse</span></p>
+          <p class="formula"><span class="var">a</span> &gt; <span class="var">b</span> ⟺ <span class="var">A</span> &gt; <span class="var">B</span> &nbsp;·&nbsp; Area = (√3 / 4) <span class="var">s</span>² <span class="formula__note">equilateral</span></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-body">
+    <div class="widget">
+      <section class="widget__main" aria-label="Animation">
+        <div class="stage">
+          <canvas id="scene"></canvas>
+          {{stage_settings}}
+          <button id="run" class="stage__run" type="button">▶ Run animation</button>
+        </div>
+        <div class="narration" id="narration" aria-live="polite">Press run to animate.</div>
+        <div class="transport">
+          <button id="play" class="btn btn--primary btn--pill" type="button">▶ Play</button>
+          <button id="finish" class="btn btn--pill" type="button">Show final</button>
+          <input id="scrub" type="range" min="0" max="1000" value="1000" aria-label="Timeline position">
+          <label class="inline">Speed
+            <select id="speed" class="select">
+              <option value="0.5">0.5×</option>
+              <option value="1" selected>1×</option>
+              <option value="2">2×</option>
+            </select>
+          </label>
+        </div>
+
+        <section class="panel steps-panel" aria-labelledby="steps-title">
+          <div class="panel__head">
+            <h2 class="panel__title" id="steps-title">Step by step</h2>
+            {{code_button}}
+          </div>
+          <ol class="steps steps--compact" id="steps"></ol>
+          <p class="steps__note">“Isosceles” is Greek for “equal legs”; “scalene” for “uneven”. Every equilateral triangle is also isosceles: it has at least two equal sides.</p>
+        </section>
+      </section>
+
+      <aside class="widget__side">
+        <fieldset class="panel">
+          <legend>Three sides</legend>
+          <div class="field">
+            <label for="a-num"><span class="var">a</span></label>
+            <input id="a-range" type="range" min="0.5" max="20" step="0.5" aria-label="side a slider">
+            <input id="a-num" type="number" step="any">
+          </div>
+          <div class="field">
+            <label for="b-num"><span class="var">b</span></label>
+            <input id="b-range" type="range" min="0.5" max="20" step="0.5" aria-label="side b slider">
+            <input id="b-num" type="number" step="any">
+          </div>
+          <div class="field">
+            <label for="c-num"><span class="var">c</span></label>
+            <input id="c-range" type="range" min="0.5" max="20" step="0.5" aria-label="side c slider">
+            <input id="c-num" type="number" step="any">
+          </div>
+          <dl class="results terms param-terms">
+            <dt><span class="var">a</span>, <span class="var">b</span>, <span class="var">c</span></dt><dd>the side lengths, each opposite the angle of the same capital letter: a faces <span class="var">A</span>, b faces <span class="var">B</span>, c faces <span class="var">C</span></dd>
+            <dt><span class="var">A</span>, <span class="var">B</span>, <span class="var">C</span></dt><dd>the angles at the three corners, in degrees; side c = AB lies along the bottom</dd>
+            <dt><span class="var">s</span></dt><dd>the side length of an equilateral triangle, s = a = b = c</dd>
+          </dl>
+          <p id="error" class="error" role="alert" hidden></p>
+          <div class="chips">
+            <button class="btn" type="button" data-preset="5,5,5">Equilateral: 5, 5, 5</button>
+            <button class="btn" type="button" data-preset="5,5,6">Isosceles: 5, 5, 6</button>
+            <button class="btn" type="button" data-preset="6,6,10">Obtuse isosceles: 6, 6, 10</button>
+            <button class="btn" type="button" data-preset="3,4,5">Right: 3, 4, 5</button>
+            <button class="btn" type="button" data-preset="5,6,7">Acute scalene: 5, 6, 7</button>
+            <button class="btn" type="button" data-preset="4,5,8">Obtuse scalene: 4, 5, 8</button>
+            <button class="btn" type="button" data-preset="2,3,6">No triangle: 2, 3, 6</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="panel">
+          <legend>Results</legend>
+          <dl class="results" id="results"></dl>
+          <details class="glossary">
+            <summary>What these terms mean</summary>
+            <dl class="terms" id="glossary"></dl>
+          </details>
+        </fieldset>
+      </aside>
+    </div>
+  </main>
+
+  <script id="pp-config" type="application/json">{{config}}</script>
+  <script>
+{{scripts}}
+  </script>
+</body>
+</html>

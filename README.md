@@ -19,6 +19,7 @@ The bar is the cumulative size of every file in the published site, where 100% i
 | [`points_lines/`](points_lines/) | [Points, Lines, Rays, Segments & Planes](https://ethan-gueck.github.io/geometry/points_lines/points_lines.html) | G.1 |
 | [`angle_types/`](angle_types/) | [Angles: Measure & Types](https://ethan-gueck.github.io/geometry/angle_types/angle_types.html) | G.2 |
 | [`angles/`](angles/) | [Angle Relationships](https://ethan-gueck.github.io/geometry/angles/angles.html) | G.3 |
+| [`triangle_types/`](triangle_types/) | [Classifying Triangles](https://ethan-gueck.github.io/geometry/triangle_types/triangle_types.html) | G.4 |
 | [`triangle_angles/`](triangle_angles/) | [Triangle Angle Sum](https://ethan-gueck.github.io/geometry/triangle_angles/triangle_angles.html) | G.5 |
 | [`pythagorean/`](pythagorean/) | [Pythagorean Theorem](https://ethan-gueck.github.io/geometry/pythagorean/pythagorean.html) | G.7 |
 | [`circles/`](circles/) | [Circles: Circumference, Area, Arcs & Sectors](https://ethan-gueck.github.io/geometry/circles/circles.html) | G.17 |

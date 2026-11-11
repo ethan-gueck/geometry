@@ -98,6 +98,45 @@ def is_supplementary_angle(a, b):
 
 # _____________ G.4 Classifying Triangles _____________
 
+def is_equilateral(a, b, c):
+    """a = b = c: all three sides equal, so all three angles are 60°."""
+    return math.isclose(a, b) and math.isclose(b, c)
+
+def is_isosceles(a, b, c):
+    """At least two sides equal; the angles opposite them (the base angles) are equal too."""
+    return math.isclose(a, b) or math.isclose(b, c) or math.isclose(a, c)
+
+def is_scalene(a, b, c):
+    """a, b, c all different: no two sides, and so no two angles, are equal."""
+    return not is_isosceles(a, b, c)
+
+def classify_triangle_by_sides(a, b, c):
+    """Equilateral, isosceles or scalene: how many sides are equal."""
+    if is_equilateral(a, b, c):
+        return "equilateral"
+    if is_isosceles(a, b, c):
+        return "isosceles"
+    return "scalene"
+
+def classify_triangle_by_angles(A, B, C):
+    """The largest angle decides: under 90° acute, exactly 90° right, over 90° obtuse."""
+    largest = max(A, B, C)
+    if math.isclose(largest, 90):
+        return "right"
+    return "acute" if largest < 90 else "obtuse"
+
+def isosceles_base_angle(apex):
+    """(180° − apex) / 2: the two base angles are equal and share what the apex leaves of 180°."""
+    return (180 - apex) / 2
+
+def angles_smallest_to_largest(a, b, c):
+    """a > b ⟺ A > B: the larger side faces the larger angle, so sorting the sides sorts the angles."""
+    return [name for _, name in sorted(((a, "A"), (b, "B"), (c, "C")))]
+
+def equilateral_triangle_area(s):
+    """Area = (√3 / 4) s²: half the base s times the height (√3 / 2) s."""
+    return math.sqrt(3) / 4 * s**2
+
 # _____________ G.5 Triangle Angle Sum & Triangle Inequality _____________
 
 def triangle_angle_sum(a, b, c):
